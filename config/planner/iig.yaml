@@ -1,0 +1,10 @@
+# Planner config
+search_distance: 2.0
+cos_view: 0.5
+pitch: 0.0
+sm: 5.0
+prob_stat: 0.75
+delta_ric: 0.008
+budget: 5
+bb_blocks_size: 5.0
+view_angle: 1.04719753 # Pi/3
