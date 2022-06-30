@@ -87,10 +87,10 @@ class CassieData {
 
       // // Transform point cloud
       // std::cout<<"80"<<std::endl;
-      // pcl::transformPointCloud(cloudwlabel, cloudwlabel, tf_eigen);
-      // origin.x() = tf_eigen.matrix()(0, 3);
-      // origin.y() = tf_eigen.matrix()(1, 3);
-      // origin.z() = tf_eigen.matrix()(2, 3);
+      pcl::transformPointCloud(cloudwlabel, cloudwlabel, tf_eigen);
+      origin.x() = tf_eigen.matrix()(0, 3);
+      origin.y() = tf_eigen.matrix()(1, 3);
+      origin.z() = tf_eigen.matrix()(2, 3);
       map_->insert_semantics(cloudwlabel, origin, ds_resolution_, free_resolution_, max_range_, num_class_);
 
     // std::ofstream obs3("/home/sangli/Research/BipedIIG/BipedIIG/testdata/map/sdata.txt");

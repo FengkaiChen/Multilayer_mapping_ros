@@ -24,7 +24,7 @@ int main(int argc, char **argv) {
     ros::NodeHandle nh("~");
 
     int num_class = 2;
-    std::string static_frame("sensor");
+    std::string static_frame("rgbd_camera");
     std::string dir;
     std::string prefix;
     int scan_num = 0;
@@ -107,7 +107,7 @@ int main(int argc, char **argv) {
     // ros::Subscriber tsub = nh.subscribe("/labeled_pointcloud_traversability", 1, &CassieData::TraversabilityPointCloudCallback, &cassie_data);
     
     pub1=nh.advertise<sensor_msgs::PointCloud> ("/point_cloud", 1);
-    ros::Subscriber sub1=nh.subscribe("/registered_scan",1,pcd_callback);
+    ros::Subscriber sub1=nh.subscribe("/rgbd_camera/depth/points",1,pcd_callback);
     ros::Subscriber ssub = nh.subscribe("/point_cloud", 1, &CassieData::SemanticPointCloudCallback, &cassie_data);
     ros::spin();
 
